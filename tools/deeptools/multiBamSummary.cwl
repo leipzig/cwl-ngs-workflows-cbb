@@ -9,8 +9,13 @@ requirements:
   InlineJavascriptRequirement: {}
 
 hints:
-  - $import: deeptools-docker.yml
-  - $import: deeptools-bioconda.yml
+  DockerRequirement:
+    dockerPull: truwl/deeptools_3.5.0_0.1.0
+  SoftwareRequirement:
+    packages:
+      deeptools:
+        specs: [ "https://bio.tools/deeptools" ]
+        version: [ "3.5.0" ]
 
 inputs:
   in_stdout:

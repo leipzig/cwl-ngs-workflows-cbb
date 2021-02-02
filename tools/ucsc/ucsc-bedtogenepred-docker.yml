@@ -1,2 +1,2 @@
  class: DockerRequirement
- dockerPull: quay.io/biocontainers/ucsc-bedtogenepred:377--h446ed27_1
+ dockerPull: truwl/ucsc_377_0.1.0

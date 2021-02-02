@@ -9,8 +9,13 @@ requirements:
   InlineJavascriptRequirement: {}
 
 hints:
-  - $import: gffread-docker.yml
-  - $import: gffread-bioconda.yml
+  DockerRequirement:
+    dockerPull: truwl/gffread_0.9.9_0.1.0
+  SoftwareRequirement:
+    packages:
+      clustalo:
+        specs: [ "https://bio.tools/gffread" ]
+        version: [ "0.9.9" ]
 
 inputs:
   input:

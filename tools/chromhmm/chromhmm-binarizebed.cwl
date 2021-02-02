@@ -9,8 +9,14 @@ requirements:
   InlineJavascriptRequirement: {}
 
 hints:
-  - $import: chromhmm-docker.yml
-  - $import: chromhmm-bioconda.yml
+  DockerRequirement:
+    dockerPull: truwl/chromhmm_1.21_0.1.0
+  SoftwareRequirement:
+    packages:
+      chromhmm:
+        specs: [ "https://bio.tools/chromhmm" ]
+        version: [ "1.21" ]
+
 
 inputs:
   paired:

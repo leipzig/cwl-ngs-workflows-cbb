@@ -6,8 +6,13 @@ label: ucsc-bedtogenepred
 doc: UCSC genepredtobed utility
 
 hints:
-  - $import: ucsc-bedtogenepred-docker.yml
-  - $import: ucsc-bedtogenepred-bioconda.yml
+  DockerRequirement:
+    dockerPull: truwl/ucsc_377_0.1.0
+  SoftwareRequirement:
+    packages:
+      ucsc:
+        specs: [ "https://bio.tools/bedtogenepred" ]
+        version: [ "377" ]
 
 inputs:
   bed:

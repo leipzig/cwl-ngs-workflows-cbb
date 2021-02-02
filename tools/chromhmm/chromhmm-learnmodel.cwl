@@ -9,8 +9,13 @@ requirements:
   InlineJavascriptRequirement: {}
 
 hints:
-  - $import: chromhmm-docker.yml
-  - $import: chromhmm-bioconda.yml
+  DockerRequirement:
+    dockerPull: truwl/chromhmm_1.21_0.1.0
+  SoftwareRequirement:
+    packages:
+      chromhmm:
+        specs: [ "https://bio.tools/chromhmm" ]
+        version: [ "1.21" ]
 
 inputs:
   input:
@@ -36,7 +41,7 @@ outputs:
     outputBinding:
       glob: $(inputs.output_dir)
 
-baseCommand: ["java", "-mx16000M", "/usr/local/share/chromhmm-1.15-0/ChromHMM.jar"]
+baseCommand: ["ChromHMM.sh","LearnModel"]
 
 s:author:
   - class: s:Person

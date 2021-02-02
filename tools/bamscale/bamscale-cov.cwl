@@ -174,8 +174,13 @@ requirements:
     coresMin: 1
   - class: InlineJavascriptRequirement
 hints:
-  - $import: bamscale-docker.yml
-  - $import: bamscale-bioconda.yml
+  DockerRequirement:
+    dockerPull: truwl/bamscale_0.0.5_0.1.0
+  SoftwareRequirement:
+    packages:
+      bamscale:
+        specs: [ "https://bio.tools/bamscale" ]
+        version: [ "0.0.5" ]
 $schemas:
   - 'https://schema.org/version/latest/schema.rdf'
 's:author':

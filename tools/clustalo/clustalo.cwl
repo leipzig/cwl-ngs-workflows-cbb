@@ -9,7 +9,13 @@ requirements:
   InlineJavascriptRequirement: {}
 
 hints:
-  - $import: clustalo-docker.yml
+  DockerRequirement:
+    dockerPull: truwl/clustalo_1.2.4_0.1.0
+  SoftwareRequirement:
+    packages:
+      clustalo:
+        specs: [ "https://bio.tools/clustalo" ]
+        version: [ "1.2.4" ]
 
 inputs:
   in:

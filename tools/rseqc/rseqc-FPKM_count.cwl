@@ -14,9 +14,13 @@ requirements:
       }
 
 hints:
-  - $import: rseqc-docker.yml
-  - $import: rseqc-bioconda.yml
-
+  DockerRequirement:
+    dockerPull: truwl/rseqc_4.0.0_0.1.0
+  SoftwareRequirement:
+    packages:
+      rseqc:
+        specs: [ "https://bio.tools/rseqc" ]
+        version: [ "4.0.0" ]
 inputs:
   ramMax:
     type: int?

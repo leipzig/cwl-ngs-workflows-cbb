@@ -6,8 +6,13 @@ label: ucsc-genepredtogtf
 doc: UCSC genepredtogtf utility
 
 hints:
-  - $import: ucsc-genepredtogtf-docker.yml
-  - $import: ucsc-genepredtogtf-bioconda.yml
+  DockerRequirement:
+    dockerPull: truwl/ucsc_377_0.1.0
+  SoftwareRequirement:
+    packages:
+      ucsc:
+        specs: [ "https://bio.tools/genepredtogtf" ]
+        version: [ "377" ]
 
 inputs:
   database:
